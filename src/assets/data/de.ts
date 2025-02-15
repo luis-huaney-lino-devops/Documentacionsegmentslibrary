@@ -1,0 +1,172 @@
+export interface Language {
+    code: string;
+    flag: string;
+    name: string;
+}
+
+export const languagesDe: Language[] = [
+    {
+        code: "zh",
+        flag: "https://flagicons.lipis.dev/flags/4x3/cn.svg",
+        name: "Chinesisch",
+    },
+    {
+        code: "en",
+        flag: "https://flagicons.lipis.dev/flags/4x3/um.svg",
+        name: "Englisch",
+    },
+    {
+        code: "fr",
+        flag: "https://flagicons.lipis.dev/flags/4x3/fr.svg",
+        name: "Französisch",
+    },
+    {
+        code: "de",
+        flag: "https://flagicons.lipis.dev/flags/4x3/de.svg",
+        name: "Deutsch",
+    },
+    {
+        code: "es",
+        flag: "https://flagicons.lipis.dev/flags/4x3/pe.svg",
+        name: "Spanisch",
+    },
+];
+
+export const propsDataDe = [
+    {
+        prop: "id",
+        type: "String",
+        desc: 'Eindeutige Kennung der Anzeige (Standard ist "1").',
+        predef: "1",
+    },
+    {
+        prop: "pattern",
+        type: "String",
+        desc: 'Anzeigemuster (z. B. "#####", "##:##:##").',
+        predef: "#####",
+    },
+    {
+        prop: "textopredefinido",
+        type: "String",
+        desc: "Anfangstext, der auf dem Bildschirm angezeigt wird.",
+        predef: "TUTEC",
+    },
+    {
+        prop: "width",
+        type: "Number",
+        desc: "Breite der Leinwand (px).",
+        predef: 300,
+    },
+    {
+        prop: "height",
+        type: "Number",
+        desc: "Höhe der Leinwand (px).",
+        predef: 180,
+    },
+    {
+        prop: "colorOn",
+        type: "String",
+        desc: "Farbe der aktiven Segmente.",
+        predef: "#4d91cd",
+    },
+    {
+        prop: "colorOff",
+        type: "String",
+        desc: "Farbe der inaktiven Segmente.",
+        predef: "#53595e45",
+    },
+    {
+        prop: "cantidadSegmentos",
+        type: "Number",
+        desc: "Anzahl der Segmente. Erlaubte Werte: 7, 14 oder 16. Mit 7 Segmenten können nur Grundzeichen angezeigt werden (z. B. 0-9, A, C, E, F). Mit 14 oder 16 Segmenten können vollständige alphanumerische Zeichen und Symbole dargestellt werden.",
+        predef: 14,
+    },
+    {
+        prop: "altoDisplay",
+        type: "Number",
+        desc: "Höhe der Ziffern.",
+        predef: 23.5,
+    },
+    {
+        prop: "anchoDisplay",
+        type: "Number",
+        desc: "Breite der Ziffern.",
+        predef: 14.5,
+    },
+    {
+        prop: "distanciaEntreDigitos",
+        type: "Number",
+        desc: "Abstand zwischen den Ziffern.",
+        predef: 2.5,
+    },
+    {
+        prop: "anchoSegmento",
+        type: "Number",
+        desc: "Breite der Segmente.",
+        predef: 3,
+    },
+    {
+        prop: "distanciaSegmento",
+        type: "Number",
+        desc: "Abstand zwischen den Segmenten.",
+        predef: 0.3,
+    },
+    {
+        prop: "tipoBorde",
+        type: "Number",
+        desc: "Erlaubter Randtyp (0, 1, 2 oder 3).",
+        predef: 3,
+    },
+    {
+        prop: "anguloDisplay",
+        type: "Number",
+        desc: "Neigungswinkel der Anzeige.",
+        predef: 6,
+    },
+];export const GermanData: string[] = [
+    "Beschreibung",
+    "Installation",
+    "Eigenschaften",
+    "Beispiele",
+    "Ersteller",
+    "Lizenz",
+    "Dokumentation der Segments-Komponente",
+    "Segments-Anzeige",
+    "Segments ist das Juwel der digitalen Anzeige: Es kombiniert den Charme klassischer Anzeigen mit moderner Technologie und bietet unvergleichliche Flexibilität und Stil.",
+    "Hauptmerkmale",
+    "Vielseitige Konfiguration: Wählen Sie zwischen 7, 14 oder 16 Segmenten, um verschiedene Detailstufen darzustellen.",
+    "Erweiterte Anpassung: Steuern Sie Farben, Größen, Winkel und Abstände für das perfekte Erscheinungsbild.",
+    "Universelle Kompatibilität: Ideal für Dashboards, IoT, Steuerpanele und vieles mehr.",
+    "Praktische Anwendungen",
+    "Perfekt geeignet für:",
+    "Anzeige von Temperatur und Luftfeuchtigkeit",
+    "Industrielle Steuerpanele",
+    "Indikatoren in Webanwendungen",
+    "Technische Vorteile",
+    "Optimierte Leistung und einfache Integration in React-Projekte mit modularer Architektur für grenzenlose Anpassung.",
+    "Hinweis: Kompatibel mit den neuesten React-Versionen und für mobile Leistung optimiert.",
+    "Um diese Komponente in Ihrem Projekt zu verwenden, installieren Sie zuerst die Bibliothek:",
+    "Importieren Sie sie dann in Ihren Code:",
+    "Eigenschaften der Komponente",
+    'Alle Eigenschaften der Komponente sind optional, außer "id", das zur Generierung mehrerer Instanzen verwendet wird. Die Standardwerte sind wie folgt:',
+    "Eigenschaft",
+    "Typ",
+    "Beschreibung",
+    "Standardwert",
+    "Beispiele",
+    "Digitale Uhr",
+    "Eine einfache digitale Uhr, die die aktuelle Zeit anzeigt und jede Sekunde aktualisiert wird.",
+    "Buchstabenweise Textanimation",
+    "Animation, die Text Buchstabe für Buchstabe mit einem Blinkeffekt anzeigt.",
+    "Numerischer Zähler",
+    "Ein Zähler, der Werte mit einer flüssigen Animation erhöht/verringert.",
+    "Fehlermanagement und Validierung",
+    "Beispiele für Fehlerbehandlung und Validierungen durch die Komponente.",
+    "Über den Ersteller",
+    "Full-Stack-Entwickler, DevOps & Ersteller von Segments",
+    "Portfolio",
+    "Ich habe Segments mit der Mission entwickelt, die Implementierung segmentierter Anzeigen in modernen Webanwendungen zu vereinfachen. Die Lösung ist agil und anpassbar und verbessert das Benutzererlebnis.",
+    "Dieses Tool entstand aus meiner Leidenschaft für die Entwicklung innovativer Ressourcen, die die Entwicklererfahrung verbessern und Kreativität sowie Effizienz in jedes Projekt einbringen.",
+    "Lizenz",
+];
+

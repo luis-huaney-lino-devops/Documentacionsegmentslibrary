@@ -4,6 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { User, Mail, Github, Link2 } from "lucide-react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { motion } from "framer-motion";
+import LenguajeDevolvedor from "../data/DevolvedorDatosIdioma";
 
 const CreatorSection = () => {
   const [avatarUrl, setAvatarUrl] = useState<string | null>(null);
@@ -32,6 +33,7 @@ const CreatorSection = () => {
 
   return (
     <motion.div
+    id="creador"
       initial={{ y: -50, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
@@ -41,7 +43,7 @@ const CreatorSection = () => {
         <CardHeader>
           <CardTitle className="text-2xl flex items-center">
             <User className="mr-2 h-6 w-6" />
-            Sobre el Creador
+            {LenguajeDevolvedor(38)}
           </CardTitle>
         </CardHeader>
         <CardContent>
@@ -68,7 +70,7 @@ const CreatorSection = () => {
             <div className="flex flex-col items-center md:items-start text-center md:text-left">
               <h3 className="text-xl font-semibold">Luis Huaney Lino</h3>
               <p className="text-gray-400 text-base">
-                Desarrollador Full Stack , DevOps & Creador de Segments
+              {LenguajeDevolvedor(39)}
               </p>
               <div className="mt-3 space-y-2">
                 <div className="flex items-center space-x-2">
@@ -99,7 +101,7 @@ const CreatorSection = () => {
                     rel="noopener noreferrer"
                     className="text-green-400 hover:underline text-base"
                   >
-                    Portafolio
+                   {LenguajeDevolvedor(40)}
                   </a>
                 </div>
               </div>
@@ -108,11 +110,9 @@ const CreatorSection = () => {
           {/* Descripción */}
           <div className="mt-6">
   <p className="text-base">
-    Creé Segments con la misión de simplificar la implementación de displays segmentados en aplicaciones web modernas, ofreciendo una solución ágil y personalizable que transforma la interfaz de usuario.
-  </p>
+  {LenguajeDevolvedor(41)}</p>
   <p className="mt-3 text-base">
-    Esta herramienta nació de mi pasión por desarrollar recursos innovadores que potencian la experiencia del desarrollador, permitiendo que la creatividad y la eficiencia se reflejen en cada proyecto.
-  </p>
+  {LenguajeDevolvedor(42)}</p>
 </div>
 
         </CardContent>
@@ -124,6 +124,7 @@ const CreatorSection = () => {
 const LicenseSection = () => {
   return (
     <motion.div
+       id="licencia"
       initial={{ y: 50, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
@@ -131,7 +132,7 @@ const LicenseSection = () => {
     >
       <Card className="w-full border-4 border-gray-300 bg-gray-900 text-gray-100 shadow-lg p-6">
         <CardHeader>
-          <CardTitle className="text-2xl">Licencia</CardTitle>
+          <CardTitle className="text-2xl">{LenguajeDevolvedor(43)}</CardTitle>
         </CardHeader>
         <CardContent>
           <pre className="bg-gray-800 p-4 rounded-md overflow-x-auto text-xs">

@@ -1,105 +1,22 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
 import { Table, TableHeader, TableHead, TableBody, TableRow, TableCell } from '@/components/ui/table';
 import { Star } from 'lucide-react';
-
+import LenguajeDevolvedor from '../data/DevolvedorDatosIdioma';
+interface Tabla {
+  prop: string;
+  type: string;
+  desc: string;
+  predef:string;
+}
 const PropsTable = () => {
-  const propsData = [
-    { 
-      prop: "id", 
-      type: "String", 
-      desc: 'Identificador único del display (por defecto "1").', 
-      predef: "1" 
-    },
-    { 
-      prop: "pattern", 
-      type: "String", 
-      desc: 'Patrón del display (ej. "#####", "##:##:##").', 
-      predef: "#####" 
-    },
-    { 
-      prop: "textopredefinido", 
-      type: "String", 
-      desc: "Texto inicial que se mostrará en el display.", 
-      predef: "TUTEC" 
-    },
-    { 
-      prop: "width", 
-      type: "Number", 
-      desc: "Ancho del canvas (px).", 
-      predef: 300 
-    },
-    { 
-      prop: "height", 
-      type: "Number", 
-      desc: "Alto del canvas (px).", 
-      predef: 180 
-    },
-    { 
-      prop: "colorOn", 
-      type: "String", 
-      desc: "Color de los segmentos activos.", 
-      predef: "#4d91cd" 
-    },
-    { 
-      prop: "colorOff", 
-      type: "String", 
-      desc: "Color de los segmentos inactivos.", 
-      predef: "#53595e45" 
-    },
-    { 
-      prop: "cantidadSegmentos", 
-      type: "Number", 
-      desc: "Cantidad de segmentos. Solo puede ser 7, 14 o 16. Con 7 segmentos, solo se pueden mostrar caracteres básicos (por ejemplo: 0-9, A, C, E, F). Con 14 o 16 segmentos se pueden representar caracteres alfanuméricos completos y símbolos (ej. letras con curvas o símbolos especiales).", 
-      predef: 14 
-    },
-    { 
-      prop: "altoDisplay", 
-      type: "Number", 
-      desc: "Altura de los dígitos.", 
-      predef: 23.5 
-    },
-    { 
-      prop: "anchoDisplay", 
-      type: "Number", 
-      desc: "Ancho de los dígitos.", 
-      predef: 14.5 
-    },
-    { 
-      prop: "distanciaEntreDigitos", 
-      type: "Number", 
-      desc: "Espacio entre los dígitos.", 
-      predef: 2.5 
-    },
-    { 
-      prop: "anchoSegmento", 
-      type: "Number", 
-      desc: "Ancho de los segmentos.", 
-      predef: 3 
-    },
-    { 
-      prop: "distanciaSegmento", 
-      type: "Number", 
-      desc: "Distancia entre los segmentos.", 
-      predef: 0.3 
-    },
-    { 
-      prop: "tipoBorde", 
-      type: "Number", 
-      desc: "Tipo de borde permitido (0, 1, 2 o 3).", 
-      predef: 3 
-    },
-    { 
-      prop: "anguloDisplay", 
-      type: "Number", 
-      desc: "Ángulo de inclinación del display.", 
-      predef: 6 
-    }
-  ];
-
+  const DataTablaRaw = LenguajeDevolvedor(undefined, "table");
+  // Si languagesRaw es un string (JSON), lo parseamos; de lo contrario, lo usamos directamente.
+  const propsData: Tabla[] =
+    typeof DataTablaRaw === "string" ? JSON.parse(DataTablaRaw) : DataTablaRaw
   return (
     <motion.div 
+     id="props"
       className="flex justify-center" 
       initial={{ y: 20, opacity: 0 }} 
       animate={{ y: 0, opacity: 1 }} 
@@ -109,21 +26,21 @@ const PropsTable = () => {
         <CardHeader>
           <CardTitle>
             <Star className="inline-block mr-2" />
-            Props del Componente
+     {LenguajeDevolvedor(23)}
           </CardTitle>
         </CardHeader>
         <CardContent>
           <p className="mb-4">
-            Todos los props del componente son opcionales, excepto el "id", el cual se usa para generar múltiples instancias.
-            Los valores predefinidos son los siguientes:
+
+          {LenguajeDevolvedor(24)}
           </p>
           <Table>
             <TableHeader>
               <TableRow>
-                <TableHead className="text-gray-300">Propiedad</TableHead>
-                <TableHead className="text-gray-300">Tipo</TableHead>
-                <TableHead className="text-gray-300">Descripción</TableHead>
-                <TableHead className="text-gray-300">Valor Predefinido</TableHead>
+                <TableHead className="text-gray-300">  {LenguajeDevolvedor(25)}</TableHead>
+                <TableHead className="text-gray-300">  {LenguajeDevolvedor(26)}</TableHead>
+                <TableHead className="text-gray-300">  {LenguajeDevolvedor(27)}</TableHead>
+                <TableHead className="text-gray-300">  {LenguajeDevolvedor(28)} </TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>

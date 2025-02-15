@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
 import { Book } from 'lucide-react';
+import LenguajeDevolvedor from '../data/DevolvedorDatosIdioma';
 
 const AnimatedText: React.FC<{ text: string }> = ({ text }) => {
   return (
@@ -45,8 +46,17 @@ const ExpandableSection: React.FC<{ children: React.ReactNode }> = ({ children }
 };
 
 const DescriptionCard = () => {
+  // Función auxiliar que garantiza devolver un string.
+  const safeText = (pos: number): string => {
+    const result = LenguajeDevolvedor(pos);
+    if (typeof result === "string") return result;
+    if (Array.isArray(result)) return result.join(" ");
+    return "";
+  };
+
   return (
     <motion.div
+      id="descripcion"
       initial={{ y: 20, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ delay: 0.4 }}
@@ -60,77 +70,65 @@ const DescriptionCard = () => {
             >
               <Book className="text-blue-400" />
             </motion.div>
-            <AnimatedText text="Segments Display" />
+            <AnimatedText text={safeText(7)} />
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-6">
           <ExpandableSection>
             <p className="mb-4">
-              <AnimatedText 
-                text="Segments es la joya de la visualización digital: combina el encanto de los displays clásicos con tecnología moderna, ofreciendo flexibilidad y estilo inigualables."
-              />
+              <AnimatedText text={safeText(8)} />
             </p>
           </ExpandableSection>
 
           <ExpandableSection>
             <h3 className="text-xl mb-3 text-blue-400">
-              <AnimatedText text="Características Destacadas" />
+              <AnimatedText text={safeText(9)} />
             </h3>
             <ul className="list-disc pl-6 space-y-3">
               <li>
-                <AnimatedText 
-                  text="Configuración versátil: elige entre 7, 14 o 16 segmentos, adaptándose a distintos niveles de detalle."
-                />
+                <AnimatedText text={safeText(10)} />
               </li>
               <li>
-                <AnimatedText 
-                  text="Personalización avanzada: controla colores, tamaños, ángulos y espaciados para lograr el look perfecto."
-                />
+                <AnimatedText text={safeText(11)} />
               </li>
               <li>
-                <AnimatedText 
-                  text="Compatibilidad universal: ideal para dashboards, IoT, paneles de control y más."
-                />
+                <AnimatedText text={safeText(12)} />
               </li>
             </ul>
           </ExpandableSection>
 
           <ExpandableSection>
             <h3 className="text-xl mb-3 text-blue-400">
-              <AnimatedText text="Aplicaciones Prácticas" />
+              <AnimatedText text={safeText(13)} />
             </h3>
             <p className="mb-4">
-              <AnimatedText text="Perfecto para:" />
+              <AnimatedText text={safeText(14)} />
             </p>
             <ul className="list-disc pl-6 space-y-3">
               <li>
-                <AnimatedText text="Displays de temperatura y humedad" />
+                <AnimatedText text={safeText(15)} />
               </li>
               <li>
-                <AnimatedText text="Paneles de control industriales" />
+                <AnimatedText text={safeText(16)} />
               </li>
               <li>
-                <AnimatedText text="Indicadores en aplicaciones web" />
+                <AnimatedText text={safeText(17)} />
               </li>
             </ul>
           </ExpandableSection>
 
           <ExpandableSection>
             <h3 className="text-xl mb-3 text-blue-400">
-              <AnimatedText text="Ventajas Técnicas" />
+              <AnimatedText text={safeText(18)} />
             </h3>
             <p className="mb-4">
-              <AnimatedText 
-                text="Rendimiento optimizado y fácil integración en proyectos React, con arquitectura modular para una personalización sin límites."
-              />
+              <AnimatedText text={safeText(19)} />
             </p>
           </ExpandableSection>
 
           <ExpandableSection>
             <p className="text-sm text-gray-400 italic">
-              <AnimatedText 
-                text="Nota: Compatible con las últimas versiones de React y optimizado para rendimiento en móviles."
-              />
+              <AnimatedText text={safeText(20)} />
             </p>
           </ExpandableSection>
         </CardContent>

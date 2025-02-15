@@ -1,0 +1,172 @@
+export interface Language {
+    code: string;
+    flag: string;
+    name: string;
+  }
+  
+  export const languagesEn: Language[] = [
+    {
+      code: "zh",
+      flag: "https://flagicons.lipis.dev/flags/4x3/cn.svg",
+      name: "Chinese",
+    },
+    {
+      code: "en",
+      flag: "https://flagicons.lipis.dev/flags/4x3/um.svg",
+      name: "English",
+    },
+    {
+      code: "fr",
+      flag: "https://flagicons.lipis.dev/flags/4x3/fr.svg",
+      name: "French",
+    },
+    {
+      code: "de",
+      flag: "https://flagicons.lipis.dev/flags/4x3/de.svg",
+      name: "German",
+    },
+    {
+      code: "es",
+      flag: "https://flagicons.lipis.dev/flags/4x3/pe.svg",
+      name: "Spanish",
+    },
+  ];
+  export const propsDataEn = [
+    {
+      prop: "id",
+      type: "String",
+      desc: 'Unique identifier for the display (default is "1").',
+      predef: "1",
+    },
+    {
+      prop: "pattern",
+      type: "String",
+      desc: 'Display pattern (e.g., "#####", "##:##:##").',
+      predef: "#####",
+    },
+    {
+      prop: "textopredefinido",
+      type: "String",
+      desc: "Initial text displayed on the screen.",
+      predef: "TUTEC",
+    },
+    {
+      prop: "width",
+      type: "Number",
+      desc: "Canvas width (px).",
+      predef: 300,
+    },
+    {
+      prop: "height",
+      type: "Number",
+      desc: "Canvas height (px).",
+      predef: 180,
+    },
+    {
+      prop: "colorOn",
+      type: "String",
+      desc: "Color of active segments.",
+      predef: "#4d91cd",
+    },
+    {
+      prop: "colorOff",
+      type: "String",
+      desc: "Color of inactive segments.",
+      predef: "#53595e45",
+    },
+    {
+      prop: "cantidadSegmentos",
+      type: "Number",
+      desc: "Number of segments. Allowed values: 7, 14, or 16. With 7 segments, only basic characters can be displayed (e.g., 0-9, A, C, E, F). With 14 or 16 segments, full alphanumeric characters and symbols (e.g., curved letters or special symbols) can be represented.",
+      predef: 14,
+    },
+    {
+      prop: "altoDisplay",
+      type: "Number",
+      desc: "Height of the digits.",
+      predef: 23.5,
+    },
+    {
+      prop: "anchoDisplay",
+      type: "Number",
+      desc: "Width of the digits.",
+      predef: 14.5,
+    },
+    {
+      prop: "distanciaEntreDigitos",
+      type: "Number",
+      desc: "Spacing between digits.",
+      predef: 2.5,
+    },
+    {
+      prop: "anchoSegmento",
+      type: "Number",
+      desc: "Width of the segments.",
+      predef: 3,
+    },
+    {
+      prop: "distanciaSegmento",
+      type: "Number",
+      desc: "Spacing between segments.",
+      predef: 0.3,
+    },
+    {
+      prop: "tipoBorde",
+      type: "Number",
+      desc: "Allowed border type (0, 1, 2, or 3).",
+      predef: 3,
+    },
+    {
+      prop: "anguloDisplay",
+      type: "Number",
+      desc: "Display tilt angle.",
+      predef: 6,
+    },
+  ];
+  export const EnglishData: string[] = [
+    "Description",
+    "Installation",
+    "Props",
+    "Examples",
+    "Creator",
+    "License",
+    "Segments Component Documentation",
+    "Segments Display",
+    "Segments is the jewel of digital visualization: it combines the charm of classic displays with modern technology, offering unmatched flexibility and style.",
+    "Key Features",
+    "Versatile configuration: choose between 7, 14, or 16 segments, adapting to different levels of detail.",
+    "Advanced customization: control colors, sizes, angles, and spacing to achieve the perfect look.",
+    "Universal compatibility: ideal for dashboards, IoT, control panels, and more.",
+    "Practical Applications",
+    "Perfect for:",
+    "Temperature and humidity displays",
+    "Industrial control panels",
+    "Indicators in web applications",
+    "Technical Advantages",
+    "Optimized performance and easy integration into React projects, with a modular architecture for limitless customization.",
+    "Note: Compatible with the latest versions of React and optimized for mobile performance.",
+    "To use this component in your project, first install the library:",
+    "Then, import it into your code:",
+    "Component Props",
+    'All component props are optional except for "id", which is used to generate multiple instances. The default values are as follows:',
+    "Property",
+    "Type",
+    "Description",
+    "Default Value",
+    "Examples",
+    "Digital Clock",
+    "A basic digital clock that displays the current time, updating every second.",
+    "Letter-by-Letter Word Animation",
+    "Animation that displays text letter by letter with a blinking effect.",
+    "Numeric Counter",
+    "A counter that increments/decrements values with smooth animation.",
+    "Error Handling and Validation",
+    "Examples of how the component handles different types of errors and validations.",
+    "About the Creator",
+    "Full Stack Developer, DevOps & Creator of Segments",
+    "Portfolio",
+    "I created Segments with the mission to simplify the implementation of segmented displays in modern web applications, offering an agile and customizable solution that transforms the user interface.",
+    "This tool was born out of my passion for developing innovative resources that enhance the developer experience, allowing creativity and efficiency to be reflected in every project.",
+    "License",
+  ];
+  

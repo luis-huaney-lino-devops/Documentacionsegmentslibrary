@@ -1,7 +1,6 @@
 "use client";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Package, Code } from "lucide-react";
-
 import { motion } from "framer-motion";
 import QuickAccessPanel from "../seccion/QuickAccessPanel";
 import ExampleSection from "../seccion/ExampleSection";
@@ -11,11 +10,16 @@ import HeaderSection from "../seccion/header";
 import { Button } from "@/components/ui/button";
 import CodeBlock from "../components/code";
 import DescriptionCard from "../seccion/Descripcion";
+import { Toaster } from "react-hot-toast";
+import LenguajeDevolvedor from "@/assets/data/DevolvedorDatosIdioma";
 
 export default function SegmentsDocumentation() 
-
 {
-  
+
+
+
+
+
   return (
     <div className="bg-black min-h-screen">
       <div className="mx-auto px-4 relative">
@@ -31,7 +35,7 @@ export default function SegmentsDocumentation()
           className="py-10"
         >
           <div className="mb-8 w-full max-w-2xl  mx-auto"><h1 className="text-4xl font-bold mb-6 tracking-tighter px-1 bg-clip-text inline-block text-transparent bg-gradient-to-r from-slate-400 to-slate-600 text-center">
-            Documentación del Componente Segments
+          {LenguajeDevolvedor(6)}
           </h1></div>
           
           <motion.div 
@@ -71,21 +75,21 @@ export default function SegmentsDocumentation()
           <DescriptionCard/>
 
           {/* Tarjeta de Instalación */}
-          <motion.div initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.6 }}>
+          <motion.div  id="instalacion" initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.6 }}>
             <Card className="mb-8 w-full max-w-2xl bg-gray-800 text-gray-100 mx-auto">
               <CardHeader>
                 <CardTitle>
                   <Code className="inline-block mr-2" />
-                  Instalación
+                  {LenguajeDevolvedor(1)}
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="mb-4">Para usar este componente en tu proyecto, primero instala la librería:</p>
+                <p className="mb-4"> {LenguajeDevolvedor(21)}</p>
                 <pre className="bg-gray-700 p-4 rounded-md overflow-x-auto">
                   <CodeBlock language="bash" code={`$ npm install segmentslibrary`}></CodeBlock>
 
                 </pre>
-                <p className="mt-4 mb-2">Luego, impórtalo en tu código:</p>
+                <p className="mt-4 mb-2"> {LenguajeDevolvedor(22)}</p>
                 <pre className="bg-gray-700 p-4 rounded-md overflow-x-auto">
                 <CodeBlock language="jsx" code={`import React from 'react';
 
@@ -110,6 +114,11 @@ export function App(props) {
           <CreatorSection />
         </motion.div>
       </div>
+    
+      <Toaster
+  position="bottom-right"
+  reverseOrder={false}
+/>
     </div>
   );
 }

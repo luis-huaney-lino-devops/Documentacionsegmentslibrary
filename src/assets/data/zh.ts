@@ -1,0 +1,172 @@
+export interface Language {
+    code: string;
+    flag: string;
+    name: string;
+}
+
+export const languagesZh: Language[] = [
+    {
+        code: "zh",
+        flag: "https://flagicons.lipis.dev/flags/4x3/cn.svg",
+        name: "中文",
+    },
+    {
+        code: "en",
+        flag: "https://flagicons.lipis.dev/flags/4x3/um.svg",
+        name: "英语",
+    },
+    {
+        code: "fr",
+        flag: "https://flagicons.lipis.dev/flags/4x3/fr.svg",
+        name: "法语",
+    },
+    {
+        code: "de",
+        flag: "https://flagicons.lipis.dev/flags/4x3/de.svg",
+        name: "德语",
+    },
+    {
+        code: "es",
+        flag: "https://flagicons.lipis.dev/flags/4x3/pe.svg",
+        name: "西班牙语",
+    },
+];
+
+export const propsDataZh = [
+    {
+        prop: "id",
+        type: "String",
+        desc: '显示的唯一标识符（默认值为 "1"）。',
+        predef: "1",
+    },
+    {
+        prop: "pattern",
+        type: "String",
+        desc: '显示模式（例如："#####", "##:##:##"）。',
+        predef: "#####",
+    },
+    {
+        prop: "textopredefinido",
+        type: "String",
+        desc: "屏幕上显示的初始文本。",
+        predef: "TUTEC",
+    },
+    {
+        prop: "width",
+        type: "Number",
+        desc: "画布的宽度（像素）。",
+        predef: 300,
+    },
+    {
+        prop: "height",
+        type: "Number",
+        desc: "画布的高度（像素）。",
+        predef: 180,
+    },
+    {
+        prop: "colorOn",
+        type: "String",
+        desc: "激活段的颜色。",
+        predef: "#4d91cd",
+    },
+    {
+        prop: "colorOff",
+        type: "String",
+        desc: "未激活段的颜色。",
+        predef: "#53595e45",
+    },
+    {
+        prop: "cantidadSegmentos",
+        type: "Number",
+        desc: "段的数量。允许值：7, 14 或 16。7 段模式仅能显示基本字符（如 0-9, A, C, E, F）。14 或 16 段模式可以显示完整的字母数字字符和特殊符号。",
+        predef: 14,
+    },
+    {
+        prop: "altoDisplay",
+        type: "Number",
+        desc: "数字的高度。",
+        predef: 23.5,
+    },
+    {
+        prop: "anchoDisplay",
+        type: "Number",
+        desc: "数字的宽度。",
+        predef: 14.5,
+    },
+    {
+        prop: "distanciaEntreDigitos",
+        type: "Number",
+        desc: "数字之间的间距。",
+        predef: 2.5,
+    },
+    {
+        prop: "anchoSegmento",
+        type: "Number",
+        desc: "段的宽度。",
+        predef: 3,
+    },
+    {
+        prop: "distanciaSegmento",
+        type: "Number",
+        desc: "段之间的间距。",
+        predef: 0.3,
+    },
+    {
+        prop: "tipoBorde",
+        type: "Number",
+        desc: "允许的边框类型（0, 1, 2 或 3）。",
+        predef: 3,
+    },
+    {
+        prop: "anguloDisplay",
+        type: "Number",
+        desc: "显示的倾斜角度。",
+        predef: 6,
+    },
+];
+export const ChineseData: string[] = [
+    "描述",
+    "安装",
+    "属性",
+    "示例",
+    "创建者",
+    "许可证",
+    "Segments 组件文档",
+    "Segments 显示",
+    "Segments 是数字显示的瑰宝：它融合了经典显示的魅力与现代技术，提供无与伦比的灵活性和风格。",
+    "主要特点",
+    "多功能配置：可选择 7、14 或 16 段，以适应不同的细节级别。",
+    "高级自定义：可控制颜色、尺寸、角度和间距，打造完美外观。",
+    "通用兼容性：适用于仪表板、物联网、控制面板等多种场景。",
+    "实际应用",
+    "适用于：",
+    "温湿度显示",
+    "工业控制面板",
+    "Web 应用中的指示器",
+    "技术优势",
+    "优化的性能，轻松集成到 React 项目中，采用模块化架构，实现无限自定义。",
+    "注意：兼容最新的 React 版本，并针对移动端性能进行了优化。",
+    "要在项目中使用此组件，首先安装该库：",
+    "然后在代码中导入它：",
+    "组件属性",
+    "除了“id”用于生成多个实例外，所有组件属性都是可选的。默认值如下：",
+    "属性",
+    "类型",
+    "描述",
+    "默认值",
+    "示例",
+    "数字时钟",
+    "一个基本的数字时钟，每秒更新一次当前时间。",
+    "逐字文本动画",
+    "逐字显示文本的动画，带有闪烁效果。",
+    "数字计数器",
+    "一个数值增加/减少的计数器，具有流畅的动画。",
+    "错误处理与验证",
+    "组件的错误处理和验证示例。",
+    "关于创建者",
+    "全栈开发者、DevOps & Segments 创建者",
+    "作品集",
+    "我创建 Segments 的目标是简化现代 Web 应用程序中分段显示的实现，提供一个灵活、可定制的解决方案，以提升用户界面体验。",
+    "这个工具来源于我对创新资源开发的热情，它能改善开发者体验，使创造力和效率在每个项目中得到充分体现。",
+    "许可证",
+];

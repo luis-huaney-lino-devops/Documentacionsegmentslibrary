@@ -1,49 +1,67 @@
-"use client"
+"use client";
 
-import { motion, AnimatePresence } from "framer-motion"
-import { Book, Code, Star, User, FileText, Menu, X } from "lucide-react"
-import { Link as ScrollLink } from "react-scroll"
-import { useEffect, useState } from "react"
+import { motion, AnimatePresence } from "framer-motion";
+import { Book, Code, Star, User, FileText, Menu, X } from "lucide-react";
+import { Link as ScrollLink } from "react-scroll";
+import { useEffect, useState } from "react";
+import LenguajeDevolvedor from "../data/DevolvedorDatosIdioma";
 
 const QuickAccessPanel = () => {
-  const [isScrolled, setIsScrolled] = useState(false)
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-  const [activeSection, setActiveSection] = useState("")
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("");
+
+  // Función auxiliar para convertir el resultado a string.
+  const safeText = (pos: number): string => {
+    const result = LenguajeDevolvedor(pos);
+    if (typeof result === "string") return result;
+    if (Array.isArray(result)) return result.join(", ");
+    return "";
+  };
 
   const menuItems = [
-    { id: "descripcion", icon: Book, label: "Descripción" },
-    { id: "instalacion", icon: Code, label: "Instalación" },
-    { id: "props", icon: Star, label: "Props" },
-    { id: "ejemplos", icon: Code, label: "Ejemplos" },
-    { id: "creador", icon: User, label: "Creador" },
-    { id: "licencia", icon: FileText, label: "Licencia" },
-  ]
+    { id: "descripcion", icon: Book, label: safeText(0) },
+    { id: "instalacion", icon: Code, label: safeText(1) },
+    { id: "props", icon: Star, label: safeText(2) },
+    { id: "ejemplos", icon: Code, label: safeText(3) },
+    { id: "creador", icon: User, label: safeText(4) },
+    { id: "licencia", icon: FileText, label: safeText(5) },
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 0)
-      
-      const sections = menuItems.map(item => item.id)
-      const currentSection = sections.find(section => {
-        const element = document.getElementById(section)
+      setIsScrolled(window.scrollY > 0);
+
+      const sections = menuItems.map((item) => item.id);
+      const currentSection = sections.find((section) => {
+        const element = document.getElementById(section);
         if (element) {
-          const rect = element.getBoundingClientRect()
-          return rect.top <= 100 && rect.bottom >= 100
+          const rect = element.getBoundingClientRect();
+          return rect.top <= 100 && rect.bottom >= 100;
         }
-        return false
-      })
-      
+        return false;
+      });
+
       if (currentSection) {
-        setActiveSection(currentSection)
+        setActiveSection(currentSection);
       }
-    }
+    };
 
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [menuItems]);
 
-  const MenuItem = ({ item, isMobile = false }) => {
-    const Icon = item.icon
+  interface MenuItemProps {
+    item: {
+      id: string;
+      icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+      label: string;
+    };
+    isMobile?: boolean;
+  }
+
+  const MenuItem = ({ item, isMobile = false }: MenuItemProps) => {
+    const Icon = item.icon;
     return (
       <ScrollLink
         to={item.id}
@@ -53,15 +71,17 @@ const QuickAccessPanel = () => {
         offset={-100}
         onClick={() => isMobile && setIsMobileMenuOpen(false)}
         className={`flex items-center px-4 py-2 rounded-lg text-emerald-400 hover:bg-gray-700/70 cursor-pointer transition-all duration-300
-          ${activeSection === item.id ? "bg-gray-700/90 shadow-lg scale-105" : isScrolled ? "" : ""}
+          ${activeSection === item.id ? "bg-gray-700/90 shadow-lg scale-105" : ""}
           ${isMobile ? "w-full justify-start" : ""}
         `}
       >
-        <Icon className="mr-2" size={18} />
+        <div className="mr-2">
+          <Icon width={18} height={18} />
+        </div>
         <span className="font-medium">{item.label}</span>
       </ScrollLink>
-    )
-  }
+    );
+  };
 
   return (
     <motion.div
@@ -69,12 +89,14 @@ const QuickAccessPanel = () => {
       animate={{ y: 0, opacity: 1 }}
       transition={{ delay: 0.5, duration: 0.5 }}
       className={`sticky top-0 z-50 transition-all duration-300
-        ${isScrolled 
-          ? "mx-4 lg:mx-auto lg:max-w-5xl mt-4 rounded-2xl bg-white/10 dark:bg-gray-900/10 backdrop-blur-md shadow-lg"
-          : "border-t-2 border-emerald-400 border-b-2"}
+        ${
+          isScrolled
+            ? "mx-4 lg:mx-auto lg:max-w-5xl mt-4 rounded-2xl bg-white/10 dark:bg-gray-900/10 backdrop-blur-md shadow-lg"
+            : "border-t-2 border-emerald-400 border-b-2"
+        }
       `}
     >
-      {/* Desktop Menu */}
+      {/* Menú para escritorio */}
       <div className="hidden md:block container mx-auto px-4 py-3">
         <div className="flex justify-center gap-3 flex-wrap">
           {menuItems.map((item) => (
@@ -83,7 +105,7 @@ const QuickAccessPanel = () => {
         </div>
       </div>
 
-      {/* Mobile Menu Button */}
+      {/* Botón para menú móvil */}
       <div className="md:hidden container mx-auto px-4 py-3">
         <button
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -94,7 +116,7 @@ const QuickAccessPanel = () => {
         </button>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Menú móvil */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
@@ -113,7 +135,7 @@ const QuickAccessPanel = () => {
         )}
       </AnimatePresence>
     </motion.div>
-  )
-}
+  );
+};
 
-export default QuickAccessPanel
+export default QuickAccessPanel;

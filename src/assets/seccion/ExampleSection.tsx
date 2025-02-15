@@ -5,6 +5,7 @@ import { motion } from "framer-motion"
 import { LazyLoadImage } from 'react-lazy-load-image-component'
 import CodeBlock from "../components/code";
 import { Code } from "lucide-react";
+import LenguajeDevolvedor from "../data/DevolvedorDatosIdioma";
 
 
 
@@ -38,8 +39,8 @@ const ExampleCard = ({ title, code, imageSrc, imageAlt, description }: ExampleCa
 export default function ExampleSection() {
   const examples = [
     {
-      title: "Reloj Digital",
-      description: "Un reloj digital básico que muestra la hora actual con actualización cada segundo.",
+      title:  LenguajeDevolvedor(30),
+      description: LenguajeDevolvedor(31),
       code: `import React, { useState, useEffect } from 'react';
 import Segments from 'segmentslibrary';
 
@@ -86,8 +87,8 @@ export default DigitalClock
       imageAlt: "Digital Clock Example"
     },
     {
-      title: "Animación de Palabra Letra por Letra",
-      description: "Animación que muestra texto letra por letra con efecto de parpadeo.",
+      title: LenguajeDevolvedor(32),
+      description: LenguajeDevolvedor(33),
       code: `import React, { useState, useEffect } from 'react'; 
 import Segments from 'segmentslibrary';
 
@@ -145,8 +146,8 @@ export default AnimatedSegments
       imageAlt: "Animated Segments Example"
     },
     {
-      title: "Contador Numérico",
-      description: "Un contador que incrementa/decrementa valores con animación suave.",
+      title: LenguajeDevolvedor(34),
+      description: LenguajeDevolvedor(35),
       code: `import React, { useState } from 'react';
 import Segments from 'segmentslibrary';
 
@@ -191,8 +192,8 @@ export default Counter
       imageAlt: "Counter Example"
     },
     {
-      title: "Manejo de Errores y Validaciones",
-      description: "Ejemplos de cómo el componente maneja diferentes tipos de errores y validaciones.",
+      title: LenguajeDevolvedor(36),
+      description: LenguajeDevolvedor(37),
       code: `// Ejemplo 1: Corrección automática de cantidadSegmentos
 <Segments cantidadSegmentos={10} />  // Se corregirá a 7
 
@@ -227,15 +228,15 @@ export default Counter
         <CardHeader>
           <CardTitle className="flex items-center text-2xl">
             <Code className="mr-2" />
-            Ejemplos
+            {LenguajeDevolvedor(29)}
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-8">
           {examples.map((example, index) => (
             <ExampleCard
               key={index}
-              title={example.title}
-              description={example.description}
+              title={Array.isArray(example.title) ? example.title.join(' ') : example.title ?? ''}
+              description={Array.isArray(example.description) ? example.description.join(' ') : example.description}
               code={example.code}
               imageSrc={example.imageSrc}
               imageAlt={example.imageAlt}
