@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-import {  useParams } from "react-router-dom";
+import {  useNavigate, useParams } from "react-router-dom";
 import Loader from "../components/Loader";
 import LenguajeDevolvedor from "../data/DevolvedorDatosIdioma";
 interface Repo {
@@ -23,12 +23,13 @@ const LanguageSelector = () => {
   // Si languagesRaw es un string (JSON), lo parseamos; de lo contrario, lo usamos directamente.
   const languages: Language[] =
     typeof languagesRaw === "string" ? JSON.parse(languagesRaw) : languagesRaw;
+    const navigate = useNavigate();
 
-  const handleLanguageChange = (code: string): void => {
-    setLanguage(code);
-    setIsOpen(false);
-    window.location.href = `/Documentacionsegmentslibrary/${code}/home`;
-  };
+    const handleLanguageChange = (code: string): void => {
+      setLanguage(code);
+      setIsOpen(false);
+      navigate(`/${code}/home`);
+    };
 
   const selectedLanguage = languages.find((l) => l.code === language);
 
