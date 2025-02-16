@@ -27,8 +27,8 @@ const App: React.FC = () => {
     <Router>
       <Suspense fallback={<LoaderTerminalComponent />}>
         <Routes>
-          <Route path="/" element={<LanguageRedirect />} />
-          <Route path="/:lang/home" element={<SegmentsDocumentation />} />
+          <Route path="/Documentacionsegmentslibrary/" element={<LanguageRedirect />} />
+          <Route path="/Documentacionsegmentslibrary/:lang/home" element={<SegmentsDocumentation />} />
           <Route path="*" element={<Error404 />} />
         </Routes>
       </Suspense>
