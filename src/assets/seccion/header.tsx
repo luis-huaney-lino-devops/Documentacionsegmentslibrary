@@ -27,7 +27,7 @@ const LanguageSelector = () => {
   const handleLanguageChange = (code: string): void => {
     setLanguage(code);
     setIsOpen(false);
-    window.location.href = `/${code}/home`;
+    window.location.href = `/Documentacionsegmentslibrary/${code}/home`;
   };
 
   const selectedLanguage = languages.find((l) => l.code === language);
