@@ -7,11 +7,12 @@ import {
   Navigate,
 } from "react-router-dom";
 
+
 import LoaderTerminalComponent from "./assets/components/LoaderTerminal";
 
 const SegmentsDocumentation = lazy(() => import('./assets/pages/ManualJsx'));
+const Error404 = lazy(() => import('./assets/pages/Errors/404'));
 const supportedLanguages = ["es", "en", "fr", "de", "zh"];
-
 const LanguageRedirect: React.FC = () => {
   let lang = navigator.language.slice(0, 2).toLowerCase();
   if (!supportedLanguages.includes(lang)) {
@@ -22,13 +23,12 @@ const LanguageRedirect: React.FC = () => {
 
 const App: React.FC = () => {
   return (
-    // Establecemos el basename para que todas las rutas sean relativas a "/Documentacionsegmentslibrary"
-    <Router basename="/Documentacionsegmentslibrary">
-      <Suspense fallback={<LoaderTerminalComponent />}>
+    <Router>
+      <Suspense fallback={<LoaderTerminalComponent/>}>
         <Routes>
           <Route path="/" element={<LanguageRedirect />} />
           <Route path="/:lang/home" element={<SegmentsDocumentation />} />
-          {/* <Route path="*" element={<Error404 />} /> */}
+          <Route path="*" element={<Error404 />} />
         </Routes>
       </Suspense>
     </Router>
