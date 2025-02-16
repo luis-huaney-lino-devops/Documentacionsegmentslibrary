@@ -18,7 +18,7 @@ const LanguageRedirect: React.FC = () => {
   if (!supportedLanguages.includes(lang)) {
     lang = "es"; 
   }
-  return <Navigate to={`/${lang}/home`} replace />;
+  return <Navigate to={`/Documentacionsegmentslibrary/${lang}/home`} replace />;
 };
 
 const App: React.FC = () => {
